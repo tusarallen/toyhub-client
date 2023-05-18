@@ -12,10 +12,10 @@ const ErrorPage = () => {
           <Lottie animationData={lottieVhai} loop={true} />
         </p>
         <div className="max-w-md text-center">
-          <p className="text-lg font-semibold md:text-3xl text-red-800">
+          <p className="text-lg font-semibold md:text-3xl text-red-800 md:-mt-10">
             {error?.message}
           </p>
-          <Link to="/" className="btn">
+          <Link to="/" className="btn mt-4">
             Back to homepage
           </Link>
         </div>
