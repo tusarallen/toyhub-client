@@ -4,6 +4,7 @@ import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../provider/AuthProvider";
 import lottieVhai from "../../assets/16766-forget-password-animation.json";
 import Lottie from "lottie-react";
+import useTitle from "../../hook/useTitle";
 
 const SignIn = () => {
   const { signIn, signInWithGoogle } = useContext(AuthContext);
@@ -11,6 +12,7 @@ const SignIn = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
+  useTitle("Login");
 
   const from = location.state?.from?.pathname || "/";
 

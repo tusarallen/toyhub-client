@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <>
+    <div>
       <footer className="footer p-10 bg-base-200 text-base-content mt-12">
         <div>
           <span className="footer-title">Services</span>
@@ -15,8 +15,8 @@ const Footer = () => {
           <span className="footer-title">Company</span>
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <a className="link link-hover">Email: toyhub909@gmail.com</a>
+          <a className="link link-hover">Address: England,Barminghum</a>
         </div>
         <div>
           <span className="footer-title">Legal</span>
@@ -76,7 +76,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   );
 };
 

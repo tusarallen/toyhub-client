@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import lottieVhai from "../../assets/118046-lf20-oahmox5rjson.json";
 import Lottie from "lottie-react";
+import useTitle from "../../hook/useTitle";
 
 const SignUp = () => {
   const { createUser, profileUpdate } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  useTitle("Register");
 
   const handleRegister = (event) => {
     event.preventDefault();
