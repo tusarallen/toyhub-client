@@ -3,8 +3,8 @@ import React from "react";
 const Gallery = () => {
   return (
     <>
-      <h2 className="text-center font-bold text-2xl mb-3">
-        Our Exclusive Gallery Toys
+      <h2 className="text-center font-bold text-4xl mb-6">
+        Our <span className="text-[red]">Exclusive</span> Gallery Toys
       </h2>
       <div className="grid md:grid-cols-8 grid-cols-1 w-full p-4 border-1 bg-[#1E90ff]">
         <div className="bg-base-100">

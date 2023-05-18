@@ -7,12 +7,12 @@ const Banner = () => {
         <div className="md:flex md:items-center md:justify-between">
           {/* Text side */}
           <div className="md:w-1/2 md:ml-16">
-            <h2 className="text-3xl font-extrabold text-gray-800">
+            <h2 className="text-4xl font-extrabold text-gray-800">
               CUTE TOYS FOR <br /> <span className="text-[red]">
               CUTE KIDS
               </span>
             </h2>
-            <p className="mt-4 text-gray-600">
+            <p className="mt-4 text-gray-600 text-lg">
               Discover a world of fun and adventure with our wide selection of toys.
               Find the perfect superhero toy for your little one and make their day
               memorable.
