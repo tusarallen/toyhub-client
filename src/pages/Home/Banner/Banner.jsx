@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className=" py-8 px-4 sm:px-6 lg:px-8">
+    <div className=" py-8 px-4 sm:px-6 lg:px-8 ">
       <div className="max-w-7xl mx-auto">
         <div className="md:flex md:items-center md:justify-between">
           {/* Text side */}

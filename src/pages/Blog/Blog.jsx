@@ -2,105 +2,97 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div className="w-11/12 mx-auto md:mt-12 mb-8">
+    <div className="w-11/12 mx-auto mt-8 md:mt-12 mb-8">
       <h2 className="font-bold text-3xl text-center mb-8">
         Frequently Asked Questions
       </h2>
-      <div>
-        {/* 1st questions */}
-        <div
-          tabIndex={0}
-          className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
-        >
-          <div className="collapse-title text-xl font-semibold bg-cyan-100">
-            What are the differences between uncontrolled and controlled
-            components?
-          </div>
-          <div className="collapse-content bg-cyan-50">
-            <p>
-              In React, controlled components refer to components that have
-              their state and behavior controlled by the parent component. These
-              components rely on props passed down from the parent component to
-              update their state and behavior. Uncontrolled components refer to
-              components that manage their own state internally.
-            </p>
-          </div>
+      <div
+        tabIndex={0}
+        className="collapse collapse-plus border border-base-300 rounded-box bg-gray-200 hover:bg-gray-100"
+      >
+        <div className="collapse-title text-xl font-medium">
+          What is an access token and refresh token? How do they work and where
+          should we store them on the client-side?
         </div>
-        {/* 2nd questions */}
-        <div
-          tabIndex={0}
-          className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
-        >
-          <div className="collapse-title text-xl font-semibold bg-cyan-100">
-            How to validate React props using PropTypes?
-          </div>
-          <div className="collapse-content bg-cyan-50">
-            <p>
-              PropTypes is a feature in React that allows you to validate the
-              data types of props passed to your components. To use PropTypes,
-              you first need to import the module from the 'prop-types' package.
-              Then, you can define a PropTypes object in your component and
-              assign it to the 'propTypes' property of the component. The
-              PropTypes object contains keys representing the prop names, and
-              values representing the expected types of the props. You can use
-              PropTypes to validate props passed to your component, and if a
-              prop is not of the expected type, a warning will be displayed in
-              the console. PropTypes can be used for a variety of data types
-              including strings, numbers, booleans, objects, and arrays.
-              PropTypes can also be used to specify that a prop is required by
-              adding the 'isRequired' modifier. Additionally, PropTypes can be
-              used to specify more complex data structures like objects with
-              specific shape and nesting. It's important to note that PropTypes
-              validation is only performed in development mode, so it will not
-              impact performance in production. Overall, PropTypes is a useful
-              tool for catching errors and ensuring that your component receives
-              the expected data types and shapes for its props.
-            </p>
-          </div>
+        <div className="collapse-content">
+          <p>
+            An access token is a credential that grants authorization to a user,
+            typically issued during authentication. It is used to authenticate
+            API requests and should be stored securely on the client-side, such
+            as in memory or a secure cookie. A refresh token is a long-lived
+            credential issued alongside the access token. It allows obtaining a
+            new access token without reauthentication. Refresh tokens should
+            also be stored securely on the client-side.
+          </p>
         </div>
-        {/* 3rd questions */}
-        <div
-          tabIndex={0}
-          className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
-        >
-          <div className="collapse-title text-xl font-semibold bg-cyan-100">
-            What is the difference between Node.js and Express.js?
-          </div>
-          <div className="collapse-content bg-cyan-50">
-            <p>
-              Node.js is a server-side runtime environment for executing
-              JavaScript code, while Express.js is a framework built on top of
-              Node.js that simplifies the process of building web applications.
-              Node.js provides a platform for running JavaScript code on the
-              server, while Express.js provides a set of tools and abstractions
-              that make it easier to handle HTTP requests, routing, and
-              middleware in Node.js applications. In essence, Node.js is a
-              foundation for building server-side applications, while Express.js
-              is a higher-level tool that simplifies the process of building web
-              applications on top of Node.js.
-            </p>
-          </div>
+      </div>
+      <div
+        tabIndex={0}
+        className="collapse collapse-plus border border-base-300 rounded-box bg-gray-200 hover:bg-gray-100"
+      >
+        <div className="collapse-title text-xl font-medium">
+          Compare SQL and NoSQL databases?
         </div>
-        {/* 4th questions */}
-        <div
-          tabIndex={0}
-          className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
-        >
-          <div className="collapse-title text-xl font-semibold bg-cyan-100">
-            What is a custom hook, and why will you create a custom hook?
-          </div>
-          <div className="collapse-content bg-cyan-50">
-            <p>
-              A custom hook is a JavaScript function that allows you to reuse
-              stateful logic across multiple React components. Custom hooks are
-              created to avoid repeating the same logic in multiple components
-              and to keep the logic separated from the rendering concerns of the
-              components. Custom hooks can be used to encapsulate complex logic,
-              handle side effects, or abstract API calls. Essentially, custom
-              hooks help to keep code organized, reduce duplication, and make it
-              easier to reuse code across multiple components.
-            </p>
-          </div>
+        <div className="collapse-content">
+          <p>
+            SQL and NoSQL databases differ in terms of data model, schema
+            flexibility, querying, scalability, and use cases. SQL databases
+            follow a structured, tabular data model with predefined schemas,
+            enforcing a rigid schema. They use SQL for querying and are
+            vertically scalable. NoSQL databases offer flexible data models,
+            allowing dynamic and evolving structures. They have schema
+            flexibility, use various query languages, and are designed for
+            horizontal scalability. NoSQL databases are often preferred for
+            unstructured data, high scalability, and specific use cases like
+            content management systems or real-time analytics.
+          </p>
+        </div>
+      </div>
+      <div
+        tabIndex={0}
+        className="collapse collapse-plus border border-base-300 rounded-box bg-gray-200 hover:bg-gray-100"
+      >
+        <div className="collapse-title text-xl font-medium">
+          What is express js? What is Nest JS?
+        </div>
+        <div className="collapse-content">
+          <p>
+            Express.js is a minimalistic and flexible web framework for Node.js.
+            It provides a simple approach to building web applications and APIs.
+            With its lightweight and unopinionated nature, Express.js gives
+            developers more control over their application's architecture and
+            design choices. It offers routing, middleware support, and utility
+            features to handle HTTP requests and responses. Nest.js, on the
+            other hand, is a progressive and extensible framework for building
+            efficient server-side applications. Built on top of Express.js,
+            Nest.js leverages TypeScript and decorators to provide a structured
+            and scalable architecture. It emphasizes modularity, dependency
+            injection, and strong typing, making it suitable for large-scale
+            enterprise applications. Nest.js also integrates well with other
+            libraries and frameworks, allowing developers to leverage their
+            existing knowledge and tools.
+          </p>
+        </div>
+      </div>
+      <div
+        tabIndex={0}
+        className="collapse collapse-plus border border-base-300 rounded-box bg-gray-200 hover:bg-gray-100"
+      >
+        <div className="collapse-title text-xl font-medium">
+          What is MongoDB aggregate and how does it work?
+        </div>
+        <div className="collapse-content">
+          <p>
+            In MongoDB, the aggregate function is used for data aggregation and
+            analysis. It allows for advanced data processing operations on
+            document collections. The aggregate function works by applying a
+            series of stages to the data, where each stage represents a specific
+            operation or transformation. These stages can include filtering,
+            grouping, sorting, projecting, and performing calculations. The
+            aggregation pipeline processes the documents sequentially, passing
+            the result of each stage to the next, allowing for complex data
+            transformations and analytics.
+          </p>
         </div>
       </div>
     </div>
