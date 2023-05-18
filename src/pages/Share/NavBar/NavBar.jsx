@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {})
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
   return (
@@ -92,61 +102,65 @@ const NavBar = () => {
                 >
                   Blog
                 </NavLink>
-                {/* {user ? (
+                {user ? (
+                  <>
                     <NavLink
-                  to="/mytoys"
-                  className={({ isActive, isPending }) =>
-                    isPending
-                      ? "pending"
-                      : isActive
-                      ? "text-[#1A1919] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium underline"
-                      : "text-[#1A1919] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium"
-                  }
-                >
-                  My Toys
-                </NavLink>
-                <NavLink
-                  to="/addtoys"
-                  className={({ isActive, isPending }) =>
-                    isPending
-                      ? "pending"
-                      : isActive
-                      ? "text-[#1A1919] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium underline"
-                      : "text-[#1A1919] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium"
-                  }
-                >
-                  Add A Toys
-                </NavLink>
-                  <div className="dropdown dropdown-end">
-                    <label
-                      tabIndex={0}
-                      className="btn btn-ghost btn-circle avatar"
+                      to="/mytoys"
+                      className={({ isActive, isPending }) =>
+                        isPending
+                          ? "pending"
+                          : isActive
+                          ? "text-[#1A1919] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium underline"
+                          : "text-[#1A1919] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium"
+                      }
                     >
-                      <div className="w-10 rounded-full">
-                        <img
-                          title={user && user.displayName}
-                          src={user && user.photoURL}
-                        />
-                      </div>
-                    </label>
-                    <ul
-                      tabIndex={0}
-                      className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+                      My Toys
+                    </NavLink>
+                    <NavLink
+                      to="/addtoys"
+                      className={({ isActive, isPending }) =>
+                        isPending
+                          ? "pending"
+                          : isActive
+                          ? "text-[#1A1919] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium underline"
+                          : "text-[#1A1919] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium"
+                      }
                     >
-                      <li>
-                        <Link to="/profile" className="justify-between">
-                          Profile
-                          <span className="badge">New</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/">Logout</Link>
-                      </li>
-                    </ul>
-                  </div>
+                      Add A Toys
+                    </NavLink>
+                    <div className="dropdown dropdown-end">
+                      <label
+                        tabIndex={0}
+                        className="btn btn-ghost btn-circle avatar"
+                      >
+                        <div className="w-10 rounded-full">
+                          <img
+                            title={user && user.displayName}
+                            src={user && user.photoURL}
+                          />
+                        </div>
+                      </label>
+                      <ul
+                        tabIndex={0}
+                        className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+                      >
+                        <li>
+                          <Link to="/" className="justify-between">
+                            Profile
+                            <span className="badge">New</span>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link onClick={handleLogOut} to="/">
+                            Logout
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </>
                 ) : (
                   <NavLink
-                    to="/login"
+                    to="/signin"
                     className={({ isActive, isPending }) =>
                       isPending
                         ? "pending"
@@ -157,7 +171,7 @@ const NavBar = () => {
                   >
                     Login
                   </NavLink>
-                )} */}
+                )}
               </div>
             </div>
           </div>
@@ -191,72 +205,56 @@ const NavBar = () => {
             Blog
           </Link>
 
-          {/* {user ? (
-                    <NavLink
-                  to="/mytoys"
-                  className={({ isActive, isPending }) =>
-                    isPending
-                      ? "pending"
-                      : isActive
-                      ? "text-[#1A1919] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium underline"
-                      : "text-[#1A1919] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium"
-                  }
-                >
-                  My Toys
-                </NavLink>
-                <NavLink
-                  to="/addtoys"
-                  className={({ isActive, isPending }) =>
-                    isPending
-                      ? "pending"
-                      : isActive
-                      ? "text-[#1A1919] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium underline"
-                      : "text-[#1A1919] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium"
-                  }
-                >
-                  Add A Toys
-                </NavLink>
-                  <div className="dropdown dropdown-end">
-                    <label
-                      tabIndex={0}
-                      className="btn btn-ghost btn-circle avatar"
-                    >
-                      <div className="w-10 rounded-full">
-                        <img
-                          title={user && user.displayName}
-                          src={user && user.photoURL}
-                        />
-                      </div>
-                    </label>
-                    <ul
-                      tabIndex={0}
-                      className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
-                    >
-                      <li>
-                        <Link to="/profile" className="justify-between">
-                          Profile
-                          <span className="badge">New</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/">Logout</Link>
-                      </li>
-                    </ul>
+          {user ? (
+            <>
+              <Link
+                to="/mytoys"
+                className="text-[#1A1919] hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium
+                "
+              >
+                My Toys
+              </Link>
+              <Link
+                to="/addtoys"
+                className="text-[#1A1919] hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              >
+                Add A Toys
+              </Link>
+              <div className="dropdown dropdown-start ml-2">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    <img
+                      title={user && user.displayName}
+                      src={user && user.photoURL}
+                    />
                   </div>
-                ) : (
-                  <NavLink
-                    to="/login"
-                    className={({ isActive, isPending }) =>
-                      isPending
-                        ? "pending"
-                        : isActive
-                        ? "text-[#1A1919] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium underline"
-                        : "text-[#1A1919] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium"
-                    }
-                  >
-                    Login
-                  </NavLink>
-                )} */}
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+                >
+                  <li>
+                    <Link to="/profile" className="justify-between">
+                      Profile
+                      <span className="badge">New</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link onClick={handleLogOut} to="/">
+                      Logout
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </>
+          ) : (
+            <Link
+              to="/signin"
+              className="text-[#1A1919] hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </nav>
