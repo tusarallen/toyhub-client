@@ -1,0 +1,55 @@
+{
+  "categories": [
+    {
+      "name": "Spider-man Toys",
+      "toys": [
+        {
+          "name": "Spider-man Figure",
+          "price": 100.2,
+          "rating": 4.5,
+          "image": "https://i.ibb.co/XZ0jhn9/image.png"
+        },
+        {
+          "name": "Spider-man Web Shooter",
+          "price": 120.99,
+          "rating": 4.2,
+          "image": "https://i.ibb.co/NmgbPkR/image.png"
+        }
+      ]
+    },
+    {
+      "name": "Iron-man Toys",
+      "toys": [
+        {
+          "name": "Iron-man Helmet",
+          "price": 149.99,
+          "rating": 4.7,
+          "image": "https://i.ibb.co/k60B743/image.png"
+        },
+        {
+          "name": "Iron-man Arc Reactor",
+          "price": 139.99,
+          "rating": 4.4,
+          "image": "https://i.ibb.co/Yb8jTjK/image.png"
+        }
+      ]
+    },
+    {
+      "name": "Thanos Toys",
+      "toys": [
+        {
+          "name": "Thanos Action Figure",
+          "price": 124.99,
+          "rating": 4.6,
+          "image": "https://i.ibb.co/378Zj6n/image.png"
+        },
+        {
+          "name": "Thanos Hand Cover",
+          "price": 114.99,
+          "rating": 4.3,
+          "image": "https://i.ibb.co/6rzVF4R/image.png"
+        }
+      ]
+    }
+  ]
+}

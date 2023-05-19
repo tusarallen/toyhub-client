@@ -3,9 +3,8 @@ import Banner from "../Banner/Banner";
 import Gallery from "../Gallery/Gallery";
 import useTitle from "../../../hook/useTitle";
 import Review from "../Review/Review";
-import Swiper from "swiper";
 import BestSelling from "../BestSelling/BestSelling";
-import ShopByCategory from "../ShopByCategory/ShopByCategory";
+import ShopByCategories from "../ShopByCategories/ShopByCategories";
 
 const Home = () => {
   useTitle("Home");
@@ -14,7 +13,7 @@ const Home = () => {
     <div>
       <Banner />
       <Gallery />
-      <ShopByCategory />
+      <ShopByCategories />
       <BestSelling />
       <Review />
     </div>

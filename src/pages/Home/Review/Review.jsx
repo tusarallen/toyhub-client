@@ -25,7 +25,11 @@ const Review = () => {
       {/* card area */}
       <div className="md:grid md:grid-cols-3 grid grid-cols-1 gap-12 mt-5">
         {/* 1st card area */}
-        <div data-aos="fade-down-right">
+        <div
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+        >
           <div className="card w-96 bg-base-100 shadow-2xl">
             <div className="card-body">
               <div className="flex flex-col justify-center items-center">
@@ -80,7 +84,11 @@ const Review = () => {
           </div>
         </div>
         {/* 2nd card area */}
-        <div data-aos="flip-left">
+        <div
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+        >
           <div className="card w-96 bg-base-100 shadow-2xl">
             <div className="card-body">
               <div className="flex flex-col justify-center items-center">
@@ -120,10 +128,9 @@ const Review = () => {
                   "I've been collecting Marvel superhero toys for years, and
                   this website has quickly become my go-to place for all my
                   purchases. The selection is incredible, and the customer
-                  service is top-notch. I recently bought the Iron Man and
-                  Captain America figures.I
-                  highly recommend this store to all Marvel enthusiasts!" -
-                  Jessica S.
+                  service is top-notch. I recently bought the Iron Man and they
+                  are absolutely fantastic. I highly recommend this store to all
+                  Marvel enthusiasts!" - Jessica S.
                 </p>
               </div>
               <div className="flex gap-4 mt-6 justify-center items-center">
@@ -136,7 +143,11 @@ const Review = () => {
           </div>
         </div>
         {/* 3rd card area */}
-        <div data-aos="fade-down-left">
+        <div
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+        >
           <div className="card w-96 bg-base-100 shadow-2xl">
             <div className="card-body">
               <div className="flex flex-col justify-center items-center">
@@ -191,7 +202,11 @@ const Review = () => {
           </div>
         </div>
         {/* 4th card area */}
-        <div data-aos="zoom-in-right">
+        <div
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+        >
           <div className="card w-96 bg-base-100 shadow-2xl">
             <div className="card-body">
               <div className="flex flex-col justify-center items-center">
@@ -247,7 +262,11 @@ const Review = () => {
           </div>
         </div>
         {/* 5th card area */}
-        <div data-aos="zoom-in">
+        <div
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+        >
           <div className="card w-96 bg-base-100 shadow-2xl">
             <div className="card-body">
               <div className="flex flex-col justify-center items-center">
@@ -303,7 +322,11 @@ const Review = () => {
           </div>
         </div>
         {/* 6th card area */}
-        <div data-aos="zoom-in-left">
+        <div
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+        >
           <div className="card w-96 bg-base-100 shadow-2xl">
             <div className="card-body">
               <div className="flex flex-col justify-center items-center">
