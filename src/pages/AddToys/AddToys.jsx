@@ -1,111 +1,174 @@
-// import React, { useContext } from "react";
-// import { useLoaderData } from "react-router-dom";
-// import Swal from "sweetalert2";
-// import useTitle from "../../hook/useTitle";
-// import { AuthContext } from "../../provider/AuthProvider";
+import React, { useContext } from "react";
+import Swal from "sweetalert2";
+import useTitle from "../../hook/useTitle";
+import { AuthContext } from "../../provider/AuthProvider";
 
-// const AddToys = () => {
-//   useTitle("Add Toys");
-//   const services = useLoaderData();
-//   const { _id, title, price, img } = services;
-//   const { user } = useContext(AuthContext);
+const AddToys = () => {
+  useTitle("Add Toys");
+  const { user } = useContext(AuthContext);
 
-//   const handleBookService = (event) => {
-//     event.preventDefault();
-//     const form = event.target;
-//     const name = form.name.value;
-//     const date = form.date.value;
-//     const email = user?.email;
+  const handleAddToy = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const photo = form.photo.value;
+    const name = form.toyName.value;
+    const sellerName = user?.displayName;
+    const email = user?.email;
+    const category = form.category.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const quantity = form.quantity.value;
+    const description = form.description.value;
 
-//     const booking = {
-//       customerName: name,
-//       email,
-//       img,
-//       date,
-//       service: title,
-//       service_id: _id,
-//       price: price,
-//     };
+    const info = {
+      sellerName,
+      email,
+      photo,
+      name,
+      price,
+      category,
+      rating,
+      quantity,
+      description,
+    };
 
-//     console.log(booking);
+    console.log(info);
 
-//     fetch("https://car-doctor-server-brown.vercel.app/bookings", {
-//       method: "POST",
-//       headers: {
-//         "content-type": "application/json",
-//       },
-//       body: JSON.stringify(booking),
-//     })
-//       .then((res) => res.json())
-//       .then((data) => {
-//         console.log(data);
-//         if (data.insertedId) {
-//           Swal.fire({
-//             title: "Success!",
-//             text: "Do you want to continue",
-//             icon: "success",
-//             confirmButtonText: "Cool",
-//           });
-//         }
-//       });
-//   };
+    fetch("http://localhost:5000/toyinfos", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(info),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Do you want to continue",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
+  };
 
-//   return (
-//     <div>
-//       <h2 className="text-center text-3xl font-bold mb-6">
-//         Book Service: {title}
-//       </h2>
-//       <form onSubmit={handleBookService}>
-//         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//           <div className="form-control">
-//             <label className="label">
-//               <span className="label-text">Name</span>
-//             </label>
-//             <input
-//               type="text"
-//               name="name"
-//               defaultValue={user?.displayName}
-//               className="input input-bordered"
-//             />
-//           </div>
-//           <div className="form-control">
-//             <label className="label">
-//               <span className="label-text">Date</span>
-//             </label>
-//             <input type="date" name="date" className="input input-bordered" />
-//           </div>
-//           <div className="form-control">
-//             <label className="label">
-//               <span className="label-text">Email</span>
-//             </label>
-//             <input
-//               type="text"
-//               name="email"
-//               defaultValue={user?.email}
-//               className="input input-bordered"
-//             />
-//           </div>
-//           <div className="form-control">
-//             <label className="label">
-//               <span className="label-text">Deu Amount</span>
-//             </label>
-//             <input
-//               type="text"
-//               defaultValue={`$ ` + price}
-//               className="input input-bordered"
-//             />
-//           </div>
-//         </div>
-//         <div className="form-control mt-6 mb-12">
-//           <input
-//             className="btn btn-primary btn-block"
-//             type="submit"
-//             value="Order Confirm"
-//           />
-//         </div>
-//       </form>
-//     </div>
-//   );
-// };
+  return (
+    <div>
+      <form onSubmit={handleAddToy}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-11/12 mx-auto mt-5 font-bold">
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Toy URL</span>
+            </label>
+            <input
+              type="text"
+              name="photo"
+              className="input input-bordered"
+              placeholder="photo"
+            />
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Toy Name</span>
+            </label>
+            <input
+              type="text"
+              name="toyName"
+              className="input input-bordered"
+              placeholder="name"
+            />
+          </div>
+          <div className="form-control text-gray-500">
+            <label className="label">
+              <span className="label-text">Seller Name</span>
+            </label>
+            <input
+              type="text"
+              name="name"
+              defaultValue={user?.displayName}
+              className="input input-bordered"
+            />
+          </div>
+          <div className="form-control text-gray-500">
+            <label className="label">
+              <span className="label-text">Seller Email</span>
+            </label>
+            <input
+              type="text"
+              name="email"
+              defaultValue={user?.email}
+              className="input input-bordered"
+            />
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Subcategory</span>
+            </label>
+            <input
+              type="text"
+              name="category"
+              className="input input-bordered"
+              placeholder="category"
+            />
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Price</span>
+            </label>
+            <input
+              type="text"
+              name="price"
+              className="input input-bordered"
+              placeholder="price"
+            />
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Rating</span>
+            </label>
+            <input
+              type="text"
+              name="rating"
+              className="input input-bordered"
+              placeholder="rating"
+            />
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Available Quantity</span>
+            </label>
+            <input
+              type="number"
+              name="quantity"
+              className="input input-bordered"
+              placeholder="quantity"
+            />
+          </div>
+        </div>
+        <div className="form-control w-11/12 mx-auto">
+          <label className="label">
+            <span className="label-text">Description</span>
+          </label>
+          <textarea
+            type="number"
+            name="description"
+            className="input input-bordered h-[80px]"
+            placeholder="description"
+          />
+        </div>
+        <div className="form-control mt-6 mb-12 w-11/12 mx-auto">
+          <input
+            className="btn btn-primary btn-block"
+            type="submit"
+            value="Add Toy"
+          />
+        </div>
+      </form>
+    </div>
+  );
+};
 
-// export default AddToys;
+export default AddToys;
