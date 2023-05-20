@@ -80,7 +80,7 @@ const MyToys = () => {
               <tr>
                 <th>
                   <label>
-                    <input type="checkbox" className="checkbox" />
+                    <h1 className="font-bold text-normal">Delete</h1>
                   </label>
                 </th>
                 <th>Seller</th>

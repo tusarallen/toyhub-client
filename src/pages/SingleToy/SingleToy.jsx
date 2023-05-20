@@ -6,12 +6,12 @@ const SingleToy = () => {
   console.log(details);
 
   const {
-    sellerEmail,
+    email,
     sellerName,
     rating,
     quantity,
     price,
-    photoUrl,
+    photo,
     description,
     name,
   } = details;
@@ -23,7 +23,7 @@ const SingleToy = () => {
           <div className="flex flex-col md:flex md:flex-row justify-center items-center">
             <div className="w-1/2">
               <img
-                src={photoUrl}
+                src={photo}
                 className="w-[450px] h-[480px] rounded-lg shadow-2xl"
               />
             </div>
@@ -35,7 +35,7 @@ const SingleToy = () => {
                 <span className="text-[red]">Seller Name</span>: {sellerName}
               </p>
               <p className="py-3">
-                <span className="text-[red]">Seller Email</span>: {sellerEmail}
+                <span className="text-[red]">Seller Email</span>: {email}
               </p>
               <p className="py-3">
                 <span className="text-[red]">Price</span>: ${price}

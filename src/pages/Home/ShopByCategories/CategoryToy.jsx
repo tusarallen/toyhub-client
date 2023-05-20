@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../../provider/AuthProvider";
 
 const CategoryToy = ({ categoryToy }) => {
-  const { photoUrl, name, price, rating, _id } = categoryToy;
+  const { photo, name, price, rating, _id } = categoryToy;
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ const CategoryToy = ({ categoryToy }) => {
   return (
     <div>
       <div className="mx-auto px-2 lg:px-5 py-5 lg:py-2 rounded-lg">
-        <img className="h-64 w-full rounded-md" src={photoUrl} />
+        <img className="h-64 w-full rounded-md" src={photo} />
         <h4 className="text-xl font-semibold mt-4">{name}</h4>
         <div className=" pt-6 ">
           <p className="items-center font-extrabold text-gray-300 ">
