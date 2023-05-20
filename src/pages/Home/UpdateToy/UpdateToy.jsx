@@ -65,6 +65,7 @@ const UpdateToy = () => {
               name="price"
               className="input input-bordered"
               placeholder="price"
+              required
             />
           </div>
           <div className="form-control">
@@ -76,6 +77,7 @@ const UpdateToy = () => {
               name="quantity"
               className="input input-bordered"
               placeholder="quantity"
+              required
             />
           </div>
         </div>
@@ -88,6 +90,7 @@ const UpdateToy = () => {
             name="description"
             className="input input-bordered h-[80px]"
             placeholder="description"
+            required
           />
         </div>
         <div className="form-control mt-6 mb-12 w-11/12 mx-auto">
