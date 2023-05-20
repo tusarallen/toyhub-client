@@ -29,8 +29,8 @@ const SignIn = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        form.reset();
         navigate(from, { replace: true });
+        form.reset();
         setSuccess("user login successfully");
       })
       .catch((error) => {

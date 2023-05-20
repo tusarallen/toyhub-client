@@ -1,9 +1,14 @@
 import React from "react";
 import Swal from "sweetalert2";
 import useTitle from "../../../hook/useTitle";
+import { useLoaderData } from "react-router-dom";
 
 const UpdateToy = () => {
-  useTitle("Update Toy");
+  useTitle("Update Toys");
+  const toys = useLoaderData();
+  console.log(toys);
+
+  const { _id,  name } = toys;
 
   const handleUpdateToy = (event) => {
     event.preventDefault();
@@ -17,11 +22,11 @@ const UpdateToy = () => {
       quantity,
       description,
     };
-
     console.log(info);
 
-    fetch("https://car-doctor-server-brown.vercel.app/bookings", {
-      method: "POST",
+    // send data to the server
+    fetch(`http://localhost:5000/updatetoys/${_id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
@@ -30,7 +35,7 @@ const UpdateToy = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
             text: "Do you want to continue",
@@ -43,7 +48,12 @@ const UpdateToy = () => {
 
   return (
     <div className="font-bold">
-        <h2 className="font-bold text-center my-10 text-red-500 text-3xl mt-5">Update Toys here</h2>
+      <h2 className="font-bold text-center my-10 text-red-500 text-3xl mt-5">
+        Update Toys here
+      </h2>
+      <h2 className="font-bold text-center my-10 text-red-500 text-3xl mt-5">
+        Toys: <span className="text-[black]">{name}</span>
+      </h2>
       <form onSubmit={handleUpdateToy}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-11/12 mx-auto mt-5 font-bold">
           <div className="form-control">

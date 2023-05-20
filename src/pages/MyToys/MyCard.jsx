@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const MyCard = ({ data }) => {
-  const { sellerName, category, name, price, quantity } = data;
+const MyCard = ({ data, handleDelete }) => {
+  const { _id, sellerName, category, name, price, quantity } = data;
   return (
     <tr>
       <th>
@@ -32,8 +32,8 @@ const MyCard = ({ data }) => {
       <td>$ {price}</td>
       <td>{quantity}</td>
       <td>
-        <Link to="/updatetoy">
-          <button className="btn-ghost bg-red-500 hover:bg-red-300 text-white font-bold btn-xs m-2 p-1">
+        <Link to={`/updatetoys/${_id}`}>
+          <button className="btn bg-red-500 hover:bg-red-300 text-white font-bold btn-xs p-5 rounded-md">
             Update
           </button>
         </Link>
