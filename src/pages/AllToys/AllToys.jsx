@@ -5,25 +5,35 @@ import Card from "./Card";
 const AllToys = () => {
   useTitle("All Toys");
   const [toys, setToys] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/alltoys")
+    fetch("https://toy-hub-project-server.vercel.app/alltoys")
       .then((res) => res.json())
       .then((data) => setToys(data));
-  });
+  }, []);
 
-  console.log(toys);
+  const handleSearch = () => {
+    fetch(`https://toy-hub-project-server.vercel.app/getToysByText/${searchText}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setToys(data);
+      });
+  };
 
   return (
     <div className="w-11/12 mx-auto">
       <h2 className="font-bold text-center text-3xl mt-5">All Toys are here</h2>
       <div>
-        <h2 className="text-5xl text-center font-bold text-[red] mb-5 my-3">
-          Total Toys: 
-          <span className="text-5xl text-center font-bold text-[black] mb-5">
-            {toys.length}
-          </span>
-        </h2>
+      <div className="search-box bg-slate-400 rounded-md w-[300px] mx-auto p-2 my-4 text-center">
+          <input
+            onChange={(e) => setSearchText(e.target.value)}
+            type="text"
+            className="p-1 rounded-md"
+          />{" "}
+          <button className="text-white font-bold ml-2" onClick={handleSearch}>Search</button>
+        </div>
         <div className="overflow-x-auto w-full">
           <table className="table w-full">
             {/* head */}

@@ -10,7 +10,7 @@ const MyToys = () => {
   const [datas, setDatas] = useState([]);
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-  const url = `http://localhost:5000/mytoys?email=${user?.email}`;
+  const url = `https://toy-hub-project-server.vercel.app/mytoys?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url, {
@@ -43,7 +43,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/mytoys/${id}`, {
+        fetch(`https://toy-hub-project-server.vercel.app/mytoys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -63,14 +63,38 @@ const MyToys = () => {
     });
   };
 
+  const handleSort = () => {
+    fetch(`https://toy-hub-project-server.vercel.app/sorting?email=${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => setDatas(data));
+  };
+
+  const handleDised = () => {
+    fetch(`https://toy-hub-project-server.vercel.app/disending?email=${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => setDatas(data));
+  };
+
   return (
     <div className="w-11/12 mx-auto">
       <h2 className="font-bold text-center text-3xl mt-5">My Toys are here</h2>
+      <div className="dropdown dropdown-bottom dropdown-start">
+        <label tabIndex={0} className="btn m-1">
+          Filter
+        </label>
+        <ul
+          tabIndex={0}
+          className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+        >
+          <button onClick={handleSort}>Lower-Higher Price</button>
+          <button onClick={handleDised}>Higher-Lower Price</button>
+        </ul>
+      </div>
       <div>
         <h2 className="text-5xl text-center font-bold text-[red] mb-5 my-7">
           My Toys :
           <span className="text-5xl text-center ml-2 font-bold text-[black] mb-5">
-             {datas.length}
+            {datas.length}
           </span>
         </h2>
         <div className="overflow-x-auto w-full">

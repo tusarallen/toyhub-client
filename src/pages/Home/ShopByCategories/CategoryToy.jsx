@@ -18,7 +18,7 @@ const CategoryToy = ({ categoryToy }) => {
         icon: "error",
         confirmButtonText: "Ok",
       });
-      navigate("/signin");
+      navigate(`/singletoy/${id}`);
     } else {
       navigate(`/singletoy/${id}`);
     }

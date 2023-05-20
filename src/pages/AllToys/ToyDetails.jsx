@@ -1,7 +1,9 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../hook/useTitle";
 
 const ToyDetails = () => {
+  useTitle("ToyDetails");
   const details = useLoaderData();
   console.log(details);
   const {
@@ -13,7 +15,7 @@ const ToyDetails = () => {
     description,
     rating,
     category,
-    photo
+    photo,
   } = details;
 
   return (
@@ -39,8 +41,7 @@ const ToyDetails = () => {
                     {sellerName}
                   </p>
                   <p className="py-3">
-                    <span className="text-[red]">Seller Email</span>:{" "}
-                    {email}
+                    <span className="text-[red]">Seller Email</span>: {email}
                   </p>
                   <p className="py-3">
                     <span className="text-[red]">Price</span>: ${price}

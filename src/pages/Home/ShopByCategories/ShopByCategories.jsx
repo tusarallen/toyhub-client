@@ -8,7 +8,7 @@ const ShopByCategories = () => {
   const [selectedTab, setSelectedTab] = useState("Spider-Man Toys");
 
   useEffect(() => {
-    fetch("http://localhost:5000/categories")
+    fetch("https://toy-hub-project-server.vercel.app/categories")
       .then((res) => res.json())
       .then((data) => {
         setAllCategories(data);

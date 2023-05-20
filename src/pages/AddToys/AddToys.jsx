@@ -34,7 +34,7 @@ const AddToys = () => {
 
     console.log(info);
 
-    fetch("http://localhost:5000/toyinfos", {
+    fetch("https://toy-hub-project-server.vercel.app/toyinfos", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -150,7 +150,7 @@ const AddToys = () => {
         </div>
         <div className="form-control w-11/12 mx-auto">
           <label className="label">
-            <span className="label-text">Description</span>
+            <span className="label-text font-bold">Description</span>
           </label>
           <textarea
             type="number"

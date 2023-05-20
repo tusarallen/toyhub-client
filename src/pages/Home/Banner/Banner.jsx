@@ -17,9 +17,9 @@ const Banner = () => {
               Find the perfect superhero toy for your little one and make their day
               memorable.
             </p>
-            <button className="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+            <a href="https://www.walmart.com/cp/toys/4171"><button className="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
               Shop Now
-            </button>
+            </button></a>
           </div>
 
           {/* Superhero toy side */}

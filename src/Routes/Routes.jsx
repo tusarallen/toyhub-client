@@ -25,9 +25,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/updatetoys/:id",
-        element: <UpdateToy></UpdateToy>,
+        element: (
+          <PrivateRoute>
+            <UpdateToy></UpdateToy>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/updatetoys/${params.id}`),
+          fetch(
+            `https://toy-hub-project-server.vercel.app/updatetoys/${params.id}`
+          ),
       },
       {
         path: "/addtoys",
@@ -39,13 +45,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/mytoys",
-        element: <MyToys></MyToys>,
+        element: (
+          <PrivateRoute>
+            <MyToys></MyToys>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/detailtoys/:id",
-        element: <ToyDetails></ToyDetails>,
+        element: (
+          <PrivateRoute>
+            <ToyDetails></ToyDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/alltoys/${params.id}`),
+          fetch(
+            `https://toy-hub-project-server.vercel.app/alltoys/${params.id}`
+          ),
       },
       {
         path: "/singletoy/:id",
@@ -55,7 +71,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/categories/${params.id}`),
+          fetch(
+            `https://toy-hub-project-server.vercel.app/categories/${params.id}`
+          ),
       },
       {
         path: "/signin",
