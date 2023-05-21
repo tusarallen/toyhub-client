@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import useTitle from "../../hook/useTitle";
 
 const ToyDetails = () => {
-  useTitle("ToyDetails");
+  useTitle("Toy Details");
   const details = useLoaderData();
   console.log(details);
   const {
@@ -23,7 +23,7 @@ const ToyDetails = () => {
       <div className="w-11/12 mx-auto">
         <div className="hero min-h-screen">
           <div className="hero-content flex-col lg:flex-row">
-            <div className="flex flex-col md:flex md:flex-row md:gap-12 justify-center items-center">
+            <div className="flex flex-col md:flex md:flex-row justify-center items-center md:gap-12">
               <div className="w-1/2">
                 <img
                   src={photo}

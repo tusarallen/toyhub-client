@@ -64,13 +64,17 @@ const MyToys = () => {
   };
 
   const handleSort = () => {
-    fetch(`https://toy-hub-project-server.vercel.app/sorting?email=${user?.email}`)
+    fetch(
+      `https://toy-hub-project-server.vercel.app/sorting?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setDatas(data));
   };
 
   const handleDised = () => {
-    fetch(`https://toy-hub-project-server.vercel.app/disending?email=${user?.email}`)
+    fetch(
+      `https://toy-hub-project-server.vercel.app/disending?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setDatas(data));
   };
@@ -80,14 +84,21 @@ const MyToys = () => {
       <h2 className="font-bold text-center text-3xl mt-5">My Toys are here</h2>
       <div className="dropdown dropdown-bottom dropdown-start">
         <label tabIndex={0} className="btn m-1">
-          Filter
+          Sort Product By Price
         </label>
         <ul
           tabIndex={0}
           className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
         >
-          <button onClick={handleSort}>Lower-Higher Price</button>
-          <button onClick={handleDised}>Higher-Lower Price</button>
+          <button className="hover:bg-gray-200 rounded-md" onClick={handleSort}>
+            Higher-Lower Price
+          </button>
+          <button
+            className="hover:bg-gray-200 rounded-md"
+            onClick={handleDised}
+          >
+            Lower-Higher Price
+          </button>
         </ul>
       </div>
       <div>
