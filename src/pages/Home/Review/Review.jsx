@@ -10,10 +10,10 @@ const Review = () => {
 
   return (
     <div className="mt-8 w-11/12 mx-auto">
-      <div className="flex justify-between items-center border-s-8 border-teal-900 mx-auto gap-24">
+      <div className="flex justify-between items-center border-s-8 border-teal-900 mx-auto gap-24 mb-8">
         <div className="ml-4">
           <h3>
-            <span className="bg-gradient-to-r text-transparent bg-clip-text text-3xl font-bold from-indigo-500 to-purple-600">
+            <span className="bg-gradient-to-r text-transparent bg-clip-text text-4xl font-bold from-indigo-500 to-purple-600">
               Customers
             </span>
             <span className="bg-gradient-to-r text-transparent bg-clip-text text-3xl font-bold from-gray-500 to-gray-600 ml-4">
@@ -25,11 +25,7 @@ const Review = () => {
       {/* card area */}
       <div className="md:grid md:grid-cols-3 grid grid-cols-1 gap-12 mt-5">
         {/* 1st card area */}
-        <div
-          data-aos="fade-up"
-          data-aos-easing="linear"
-          data-aos-duration="1500"
-        >
+        <div data-aos-delay="300" data-aos="fade-down" data-aos-duration="1000">
           <div className="card w-96 bg-base-100 shadow-2xl">
             <div className="card-body">
               <div className="flex flex-col justify-center items-center">
@@ -84,11 +80,7 @@ const Review = () => {
           </div>
         </div>
         {/* 2nd card area */}
-        <div
-          data-aos="fade-up"
-          data-aos-easing="linear"
-          data-aos-duration="1500"
-        >
+        <div data-aos-delay="300" data-aos="fade-down" data-aos-duration="1000">
           <div className="card w-96 bg-base-100 shadow-2xl">
             <div className="card-body">
               <div className="flex flex-col justify-center items-center">
@@ -143,11 +135,7 @@ const Review = () => {
           </div>
         </div>
         {/* 3rd card area */}
-        <div
-          data-aos="fade-up"
-          data-aos-easing="linear"
-          data-aos-duration="1500"
-        >
+        <div data-aos-delay="300" data-aos="fade-down" data-aos-duration="1000">
           <div className="card w-96 bg-base-100 shadow-2xl">
             <div className="card-body">
               <div className="flex flex-col justify-center items-center">
@@ -202,11 +190,7 @@ const Review = () => {
           </div>
         </div>
         {/* 4th card area */}
-        <div
-          data-aos="fade-up"
-          data-aos-easing="linear"
-          data-aos-duration="1500"
-        >
+        <div data-aos-delay="300" data-aos="fade-down" data-aos-duration="1000">
           <div className="card w-96 bg-base-100 shadow-2xl">
             <div className="card-body">
               <div className="flex flex-col justify-center items-center">
@@ -262,11 +246,7 @@ const Review = () => {
           </div>
         </div>
         {/* 5th card area */}
-        <div
-          data-aos="fade-up"
-          data-aos-easing="linear"
-          data-aos-duration="1500"
-        >
+        <div data-aos-delay="300" data-aos="fade-down" data-aos-duration="1000">
           <div className="card w-96 bg-base-100 shadow-2xl">
             <div className="card-body">
               <div className="flex flex-col justify-center items-center">
@@ -322,11 +302,7 @@ const Review = () => {
           </div>
         </div>
         {/* 6th card area */}
-        <div
-          data-aos="fade-up"
-          data-aos-easing="linear"
-          data-aos-duration="1500"
-        >
+        <div data-aos-delay="300" data-aos="fade-down" data-aos-duration="1000">
           <div className="card w-96 bg-base-100 shadow-2xl">
             <div className="card-body">
               <div className="flex flex-col justify-center items-center">
