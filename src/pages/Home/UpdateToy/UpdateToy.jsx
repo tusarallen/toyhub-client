@@ -8,7 +8,7 @@ const UpdateToy = () => {
   const toys = useLoaderData();
   console.log(toys);
 
-  const { _id,  name } = toys;
+  const { description, quantity, price, _id, name } = toys;
 
   const handleUpdateToy = (event) => {
     event.preventDefault();
@@ -40,7 +40,7 @@ const UpdateToy = () => {
             title: "Success!",
             text: "Do you want to continue",
             icon: "success",
-            confirmButtonText: "Cool",
+            confirmButtonText: "Ok",
           });
         }
       });
@@ -63,7 +63,8 @@ const UpdateToy = () => {
             <input
               type="text"
               name="price"
-              className="input input-bordered"
+              className="input input-bordered text-gray-500"
+              defaultValue={price}
               placeholder="price"
               required
             />
@@ -75,7 +76,8 @@ const UpdateToy = () => {
             <input
               type="number"
               name="quantity"
-              className="input input-bordered"
+              className="input input-bordered text-gray-500"
+              defaultValue={quantity}
               placeholder="quantity"
               required
             />
@@ -88,7 +90,8 @@ const UpdateToy = () => {
           <textarea
             type="number"
             name="description"
-            className="input input-bordered h-[80px]"
+            className="input input-bordered h-[80px] text-gray-500"
+            defaultValue={description}
             placeholder="description"
             required
           />

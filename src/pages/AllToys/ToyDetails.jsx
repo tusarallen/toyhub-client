@@ -20,12 +20,11 @@ const ToyDetails = () => {
 
   return (
     <div>
-      <h2>Details page: {name}</h2>
       <>
         <div className="w-11/12 mx-auto">
           <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row">
-              <div className="flex flex-col md:flex md:flex-row justify-center items-center">
+              <div className="flex flex-col md:flex md:flex-row md:gap-12 justify-center items-center">
                 <div className="w-1/2">
                   <img
                     src={photo}
